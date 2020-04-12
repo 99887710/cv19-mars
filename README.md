@@ -81,8 +81,42 @@ $ curl -s https://xxxxxxx.execute-api.us-west-2.amazonaws.com/Prod/ping | python
 }
 ```
 
+## Case Data Modeling
 
-## Data - Integrated with restdb.io
+{
+  "userName": String,
+  "userEmail": String,
+  "age": Integer,
+  "gender": String,
+  "isSmoker": Boolean,
+  "condition": {
+    "type2Diabetes": Boolean,
+    "type1Diabetes": Boolean,
+    "hypertension": Boolean,
+    "coronaryHeartDiseases": Boolean,
+    "copd": Boolean,
+    "cancer": Boolean,
+    "chronicKidneyDisease": Boolean,
+    "other": String
+  },
+  "selfScreening": {
+    "testedPositive": Boolean,
+    "dryCough": Enum,
+    "fever": Enum,
+    "soreThroat": Enum,
+    "fatigue": Enum,
+    "shortnessOfBreadth": Enum,
+    "lossOfSmell": Enum,
+    "lossOfTaste": Enum,
+    "muscleSoreness": Enum,
+    "other": String,
+    "otherLevel": Enum
+  }
+}
+
+* Severity Enum: ['none', 'mild', 'moderate', 'severe']
+
+## REST APIs - Integrated with restdb.io
 
 1. GET all documents from the case-data-model collection
 
