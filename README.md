@@ -82,3 +82,117 @@ $ curl -s https://xxxxxxx.execute-api.us-west-2.amazonaws.com/Prod/ping | python
 ```
 
 
+## Data - Integrated with restdb.io
+
+1. GET all documents from the case-data-model collection
+
+```
+
+https://cv19mars-9e51.restdb.io/rest/case-data-model
+
+```
+
+2. GET records by query user email
+
+```
+
+https://cv19mars-9e51.restdb.io/rest/case-data-model?q={"userName":"cantrelllindsay@quilch.com"}
+
+
+Sample Output:
+
+[
+    {
+        "_id": "5e928c3e5053da7500024860",
+        "userName": "Cantrell Lindsay",
+        "userEmail": "cantrelllindsay@quilch.com",
+        "age": 96,
+        "gender": "male",
+        "isSmoker": false,
+        "condition": {
+            "type2Diabetes": false,
+            "type1Diabetes": false,
+            "hypertension": false,
+            "coronaryHeartDiseases": true,
+            "copd": false,
+            "cancer": true,
+            "chronicKidneyDisease": true,
+            "other": "ut"
+        },
+        "selfScreening": {
+            "testedPositive": true,
+            "dryCough": "none",
+            "fever": "none",
+            "soreThroat": "mild",
+            "fatigue": "severe",
+            "shortnessOfBreadth": "severe",
+            "lossOfSmell": "mild",
+            "lossOfTaste": "moderate",
+            "muscleSoreness": "severe",
+            "other": "ad",
+            "otherLevel": "mild"
+        }
+    }
+]
+
+```
+
+3. POST a new document to the case-data-model collection
+
+```
+
+https://cv19mars-9e51.restdb.io/rest/case-data-model
+
+
+Body - JSON
+
+{
+    "userName": "kevin quinn",
+    "userEmail": "kevinquinn@arts.com",
+    "age": 18,
+    "gender": "male",
+    "isSmoker": false,
+    "condition": {
+        "type2Diabetes": false,
+        "type1Diabetes": false,
+        "hypertension": false,
+        "coronaryHeartDiseases": true,
+        "copd": false,
+        "cancer": true,
+        "chronicKidneyDisease": true,
+        "other": "sneezing"
+    },
+    "selfScreening": {
+        "testedPositive": false,
+        "dryCough": "none",
+        "fever": "none",
+        "soreThroat": "mild",
+        "fatigue": "severe",
+        "shortnessOfBreadth": "severe",
+        "lossOfSmell": "mild",
+        "lossOfTaste": "moderate",
+        "muscleSoreness": "severe",
+        "other": "ad",
+        "otherLevel": "mild"
+    }
+}
+
+```
+
+4. PUT an updated record to collection by Object ID
+
+
+```
+
+https://cv19mars-9e51.restdb.io/rest/case-data-model/{ObjectID}
+
+e.g. https://cv19mars-9e51.restdb.io/rest/case-data-model/5e928c3e5053da7500024860
+
+Body -JSON
+
+{
+	"userEmail": "cantrelllindsay@quilch.com",
+	"gender": "male"
+}
+
+```
