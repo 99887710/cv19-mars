@@ -83,6 +83,8 @@ $ curl -s https://xxxxxxx.execute-api.us-west-2.amazonaws.com/Prod/ping | python
 
 ## Case Data Modeling
 
+```
+
 {
   "userName": String,
   "userEmail": String,
@@ -115,6 +117,8 @@ $ curl -s https://xxxxxxx.execute-api.us-west-2.amazonaws.com/Prod/ping | python
 }
 
 * Severity Enum: ['none', 'mild', 'moderate', 'severe']
+
+```
 
 ## REST APIs - Integrated with restdb.io
 
