@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 @PropertySource("classpath:restdbprops.properties")
 @Log
-public class RestDbClient implements Rest {
+public class RestDbClient implements Rest<String> {
 
     @Value("${api.key}")
     private String apiKey;
