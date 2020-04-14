@@ -5,6 +5,7 @@ import jw.io.web.Rest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
@@ -20,4 +21,10 @@ public class CaseDataController {
     public String listAll() throws UnirestException {
         return rest.get();
     }
+
+    @RequestMapping(path = "/getBy", method = RequestMethod.GET)
+    public String getBy(@RequestParam String q) throws UnirestException {
+        return rest.get(q);
+    }
+
 }

@@ -1,7 +1,7 @@
 package jw.io.web;
 
-import com.mashape.unirest.http.exceptions.UnirestException;
-
 public interface Rest {
-    String get() throws UnirestException;
+    String get();
+    String get(String queryParams);
+
 }
