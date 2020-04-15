@@ -31,4 +31,9 @@ public class CaseDataController {
     public String add(@RequestBody String body) {
         return rest.post(body);
     }
+
+    @RequestMapping(path = "/update/{id}", method = RequestMethod.PUT)
+    public String update(@PathVariable String id, @RequestBody String body) {
+        return rest.put(id, body);
+    }
 }

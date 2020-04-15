@@ -36,6 +36,27 @@ public class RestDbClient implements Rest<String> {
         return postHelper(body);
     }
 
+    @Override
+    public String put(String id, String body) {
+        return putHelper(id, body);
+    }
+
+    private String putHelper(String id, String body) {
+        HttpResponse<String> response = null;
+        try {
+            response = Unirest.put(dataEndpoint + "/{id}")
+                    .header("content-type", "application/json")
+                    .header("x-apikey", apiKey)
+                    .header("cache-control", "no-cache")
+                    .routeParam("id", id)
+                    .body(body)
+                    .asString();
+        } catch (UnirestException e) {
+            e.printStackTrace();
+        }
+        return response != null ? response.getBody() : ERROR_RESPONSE;
+    }
+
     private String postHelper(String body) {
         HttpResponse<String> response = null;
         try {
