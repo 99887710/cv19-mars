@@ -31,6 +31,26 @@ public class RestDbClient implements Rest<String> {
         return getHelper(queryParams);
     }
 
+    @Override
+    public String post(String body) {
+        return postHelper(body);
+    }
+
+    private String postHelper(String body) {
+        HttpResponse<String> response = null;
+        try {
+            response = Unirest.post(dataEndpoint)
+                    .header("content-type", "application/json")
+                    .header("x-apikey", apiKey)
+                    .header("cache-control", "no-cache")
+                    .body(body)
+                    .asString();
+        } catch (UnirestException e) {
+            e.printStackTrace();
+        }
+        return response != null ? response.getBody() : ERROR_RESPONSE;
+    }
+
     private String getHelper(String queryParams) {
         HttpResponse<String> response = null;
         log.info(String.format("query params - %s", queryParams));
@@ -45,4 +65,6 @@ public class RestDbClient implements Rest<String> {
         }
         return response != null ? response.getBody() : ERROR_RESPONSE;
     }
+
+
 }

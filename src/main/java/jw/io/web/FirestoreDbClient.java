@@ -73,4 +73,9 @@ public class FirestoreDbClient implements Rest<List<Map<String, Object>>> {
     public List<Map<String, Object>> get(String queryParams) {
         return null;
     }
+
+    @Override
+    public List<Map<String, Object>> post(String body) {
+        return null;
+    }
 }

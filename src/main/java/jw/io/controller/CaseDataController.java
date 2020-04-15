@@ -3,10 +3,7 @@ package jw.io.controller;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import jw.io.web.Rest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.util.List;
@@ -30,4 +27,8 @@ public class CaseDataController {
         return rest.get(q);
     }
 
+    @RequestMapping(path = "/add", method = RequestMethod.POST)
+    public String add(@RequestBody String body) {
+        return rest.post(body);
+    }
 }
