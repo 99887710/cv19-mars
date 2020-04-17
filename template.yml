@@ -11,7 +11,7 @@ Resources:
     Properties:
       Handler: jw.io.StreamLambdaHandler::handleRequest
       Runtime: java8
-      CodeUri: .
+      CodeUri: target/cv19-mars-1.0-SNAPSHOT-lambda-package.zip
       MemorySize: 512
       Policies: AWSLambdaBasicExecutionRole
       Timeout: 30

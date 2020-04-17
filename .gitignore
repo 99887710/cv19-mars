@@ -140,5 +140,6 @@ compiler.xml
 encodings.xml
 misc.xml
 vcs.xml
+out.yml
 
 # End of https://www.gitignore.io/api/java,intellij

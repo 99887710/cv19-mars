@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class WebConfig {
 
+    /* Only for local test,
+       removed this bean when deploying to aws lambda */
     @Bean
     public WebServerFactoryCustomizer<TomcatServletWebServerFactory> tomcatCustomizer() {
         return (tomcat) -> tomcat.addConnectorCustomizers((connector) ->
