@@ -1,16 +1,11 @@
 package jw.io.controller;
 
-import com.mashape.unirest.http.exceptions.UnirestException;
 import jw.io.web.Rest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-
-import java.util.List;
-import java.util.Map;
 
 @RestController
-@EnableWebMvc
+//@EnableWebMvc
 @RequestMapping("/cv19/cases")
 public class CaseDataController {
 
