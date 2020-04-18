@@ -90,6 +90,8 @@ Open API json: http://{baseUrl}/api-docs
 ## REST APIs - Authored by restdb.io
 > [please refer to restdb.io Documentation for more deatils](https://restdb.io/docs/)
 
+> [restdb.io Cheat Sheet(v0.2)](https://restdb.io/media/restdb-cheat-sheet.pdf)
+
 *Please update your **api.key** and **data.endpoint** in **restdbprops.properties**
 
 1. GET all documents from the case-data-model collection
