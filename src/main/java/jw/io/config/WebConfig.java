@@ -14,6 +14,6 @@ public class WebConfig {
     @Bean
     public WebServerFactoryCustomizer<TomcatServletWebServerFactory> tomcatCustomizer() {
         return (tomcat) -> tomcat.addConnectorCustomizers((connector) ->
-                ((AbstractHttp11Protocol<?>)connector.getProtocolHandler()).setRelaxedQueryChars("{}"));
+                ((AbstractHttp11Protocol<?>)connector.getProtocolHandler()).setRelaxedQueryChars("{}$[]"));
     }
 }

@@ -23,12 +23,12 @@ public class RestDbClient implements Rest<String> {
 
     @Override
     public String get()  {
-        return getHelper(null);
+        return getHelper(QueryType.Query, null);
     }
 
     @Override
-    public String get(String queryParams) {
-        return getHelper(queryParams);
+    public String get(QueryType queryType, String queryParams) {
+        return getHelper(queryType, queryParams);
     }
 
     @Override
@@ -72,19 +72,31 @@ public class RestDbClient implements Rest<String> {
         return response != null ? response.getBody() : ERROR_RESPONSE;
     }
 
-    private String getHelper(String queryParams) {
+    private String getHelper(QueryType queryType, String queryParams) {
         HttpResponse<String> response = null;
         log.info(String.format("query params - %s", queryParams));
         try {
             response = Unirest.get(dataEndpoint)
                     .header("x-apikey", apiKey)
                     .header("cache-control", "no-cache")
-                    .queryString("q", queryParams)
+                    .queryString(getQueryType(queryType), queryParams)
                     .asString();
         } catch (UnirestException e) {
             e.printStackTrace();
         }
         return response != null ? response.getBody() : ERROR_RESPONSE;
+    }
+
+    private String getQueryType(QueryType queryType) {
+        String result = "q";
+        switch (queryType) {
+            case Query:
+                result = "q";
+                break;
+            case Aggregate:
+                result = "h";
+        }
+        return result;
     }
 
 

@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
 
-@Component
+//@Component
 @PropertySource("classpath:firestoreprops.properties")
 @Log
 public class FirestoreDbClient implements Rest<List<Map<String, Object>>> {
@@ -70,7 +70,7 @@ public class FirestoreDbClient implements Rest<List<Map<String, Object>>> {
     }
 
     @Override
-    public List<Map<String, Object>> get(String queryParams) {
+    public List<Map<String, Object>> get(QueryType queryType, String queryParams) {
         return null;
     }
 

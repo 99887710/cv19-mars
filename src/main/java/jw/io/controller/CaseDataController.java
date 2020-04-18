@@ -1,5 +1,6 @@
 package jw.io.controller;
 
+import jw.io.web.QueryType;
 import jw.io.web.Rest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,8 +20,11 @@ public class CaseDataController {
 
     @RequestMapping(path = "/getBy", method = RequestMethod.GET)
     public String getBy(@RequestParam String q) {
-        return rest.get(q);
+        return rest.get(QueryType.Query, q);
     }
+
+    @RequestMapping(path = "/count", method = RequestMethod.GET)
+    public String count(@RequestParam String h) {return rest.get(QueryType.Aggregate, h);}
 
     @RequestMapping(path = "/add", method = RequestMethod.POST)
     public String add(@RequestBody String body) {
