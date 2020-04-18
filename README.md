@@ -120,8 +120,30 @@ $ curl -s https://xxxxxxx.execute-api.us-west-2.amazonaws.com/Prod/ping | python
 
 ```
 
-## REST APIs - Integrated with restdb.io
+***
 
+## How to get cv19-mars backend up and running?
+> with maven wrapper, you don't have to install Maven
+#### Step 1. Clone cv19-mars project
+```
+git clone git@github.com:cv19-mars/cv19-mars.git
+```
+
+#### Step 2. Go to the project directory and run maven wrapper commands
+```
+./mvnw spring-boot:run
+```
+
+#### Step 3. Start testing endpoints locally
+
+***
+
+## Rest APIs - Authored by Mars
+**TBC**
+***
+
+## REST APIs - Authored by restdb.io
+> [please refer to restdb.io Documentation for more deatils](https://restdb.io/docs/)
 1. GET all documents from the case-data-model collection
 
 ```

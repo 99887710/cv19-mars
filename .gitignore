@@ -120,6 +120,9 @@ build.gradle
 .gradle
 build/
 
+### Maven ###
+.mvn/wrapper/
+
 # Ignore Gradle GUI config
 gradle-app.setting
 
