@@ -90,7 +90,7 @@ Open API json: http://{baseUrl}/api-docs
 ## REST APIs - Authored by restdb.io
 > [please refer to restdb.io Documentation for more deatils](https://restdb.io/docs/)
 
-*Please update your **api.key** and **data.endpoint** in **restdbpropr.properties**
+*Please update your **api.key** and **data.endpoint** in **restdbprops.properties**
 
 1. GET all documents from the case-data-model collection
 
@@ -211,6 +211,8 @@ The starter project defines a simple `/ping` resource that can accept `GET` requ
 
 The project folder also includes a `template.yml` file. You can use this [SAM](https://github.com/awslabs/serverless-application-model) file to deploy the project to AWS Lambda and Amazon API Gateway or test in local with the [SAM CLI](https://github.com/awslabs/aws-sam-cli). 
 
+Another deployment way is to use our **deploy.sh** which uses aws cloudformation commands but remember need to create a s3 bucket for artifact and a stack name for cloudformation stack.
+
 ## Pre-requisites
 * [AWS CLI](https://aws.amazon.com/cli/)
 * [SAM CLI](https://github.com/awslabs/aws-sam-cli)
@@ -259,7 +261,7 @@ $ curl -s http://127.0.0.1:3000/ping | python -m json.tool
 }
 ``` 
 
-## Deploying to AWS
+## Deploying to AWS using SAM
 To deploy the application in your AWS account, you can use the SAM CLI's guided deployment process and follow the instructions on the screen
 
 ```
@@ -285,4 +287,9 @@ $ curl -s https://xxxxxxx.execute-api.us-west-2.amazonaws.com/Prod/ping | python
 {
     "pong": "Hello, World!"
 }
+```
+
+## Deploying to AWS using deploy.sh
+```
+./deploy.sh
 ```
