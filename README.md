@@ -138,7 +138,7 @@ git clone git@github.com:cv19-mars/cv19-mars.git
 
 ***
 
-## Rest APIs - Authored by Mars
+## REST APIs - Authored by Mars
 **TBC**
 ***
 
