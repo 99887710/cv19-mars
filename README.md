@@ -138,8 +138,33 @@ git clone git@github.com:cv19-mars/cv19-mars.git
 
 ***
 
+## Open API Integration - Swagger 3.0
+```
+Swagger UI url: http://{baseUrl}/api-docs.html
+Open API json: http://{baseUrl}/api-docs
+```
 ## REST APIs - Authored by Mars
-**TBC**
+> The following endpoints are general form of REST APIs, please refer to the specific API descriptions below for sample input/output.
+> At the time of writing, **Mars only supports restdb.io** 
+> **Firestore will be supported soon**
+
+1. List all cases
+```
+[GET] {baseUrl}/cv19/cases/listAll
+```
+
+2. Get by properties, e.g. username, email . . . etc
+```
+[GET] {baseUrl}/cv19/cases/getBy
+```
+3. Add a new case
+```
+[POST] {baseUrl}/cv19/cases/add
+```
+4. Update an existing case
+```
+[PUT] {baseUrl}/cv19/cases/update/{id}
+```
 ***
 
 ## REST APIs - Authored by restdb.io
