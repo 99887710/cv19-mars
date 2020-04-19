@@ -1,4 +1,4 @@
-# cv19-mars serverless API
+# cv19-mars serverless API (**This branch is only for test**)
 This project is built on top of spring boot 2 and can be deployed to AWS Lambda.
 
 ## Case Data Modeling
