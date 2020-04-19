@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+
 @Component
 @PropertySource("classpath:restdbprops.properties")
 @Log
@@ -20,6 +22,11 @@ public class RestDbClient implements Rest<String> {
     private String dataEndpoint;
 
     private final String ERROR_RESPONSE = "request error";
+
+    @PostConstruct
+    public void initHerokuConfigVars() {
+        apiKey = System.getenv("restdb-api-key");
+    }
 
     @Override
     public String get()  {
