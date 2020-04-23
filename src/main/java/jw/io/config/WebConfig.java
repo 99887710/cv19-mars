@@ -11,9 +11,9 @@ public class WebConfig {
 
     /* Only for local test,
        removed this bean when deploying to aws lambda */
-    @Bean
-    public WebServerFactoryCustomizer<TomcatServletWebServerFactory> tomcatCustomizer() {
-        return (tomcat) -> tomcat.addConnectorCustomizers((connector) ->
-                ((AbstractHttp11Protocol<?>)connector.getProtocolHandler()).setRelaxedQueryChars("{}$[]"));
-    }
+//    @Bean
+//    public WebServerFactoryCustomizer<TomcatServletWebServerFactory> tomcatCustomizer() {
+//        return (tomcat) -> tomcat.addConnectorCustomizers((connector) ->
+//                ((AbstractHttp11Protocol<?>)connector.getProtocolHandler()).setRelaxedQueryChars("{}$[]"));
+//    }
 }
