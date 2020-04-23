@@ -4,6 +4,13 @@ This project is built on top of spring boot 2 and can be deployed to AWS Lambda.
 # Architecture Diagram
 ![architecture](architechture-diagram.png)
 
+# API Security
+
+```
+solution 1: Cognito (OAuth 2.0) +  API Gateway
+solution 2: API　Key
+```
+
 ## Case Data Modeling
 
 ```
